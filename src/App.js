@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+// get our fontawesome imports
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons'
+
+//import our code snippet
+import SearchBar from "./searchBar/SearchBar"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="post-container">
+        <div className="rotated-square"></div>
+        <h2>THE SEARCH BAR.</h2>
+        <div className="code-container">
+          <div className="code-header">
+            <div className="red-circle"></div>
+            <div className="yellow-circle"></div>
+            <div className="green-circle"></div>
+          </div>
+          <div class="code-example-container">
+            <SearchBar />
+          </div>
+        </div>
+        <div className="info-footer">
+          <p>MATT'S CODE SNIPPETS</p>
+          <p>SWIPE <span className="right-arrow"><FontAwesomeIcon icon={faArrowCircleLeft} rotation={180}/></span></p>
+        </div>
+      </div>
     </div>
   );
 }
